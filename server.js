@@ -7,6 +7,12 @@ app.get('/hello/:name', (req, res) => {
     res.send(`Hello ${name}`);
 });
 
+const path = require('path');
+
+app.get('/index', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
+
 app.get('/hello/:name/:lastname', (req, res) => {
     const name = req.params.name;
     const lastname = req.params.lastname;
@@ -48,6 +54,8 @@ app.get('/api/movies', (req, res) => {
     // Add status code 201 (Created) and send the movie data as JSON
     res.status(201).json({ movies });
 });
+
+app.use(express.static('public'));
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
