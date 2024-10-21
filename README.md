@@ -1,0 +1,1 @@
+Express helps you build web servers and APIs. Instead of writing complex code for handling requests and responses, Express simplifies this process. It also allows the mapping of URLs to certain functions. It also uses middleware, which are functions that run in between requests and responses. Middleware can be used for logging, authentication, handling errors, and more.
