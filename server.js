@@ -7,6 +7,9 @@ app.get('/hello/:name', (req, res) => {
     res.send(`Hello ${name}`);
 });
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.get('/name', (req, res) => {
     const firstname = req.query.firstname;
     const lastname = req.query.lastname;
@@ -31,6 +34,12 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);
+});
+
+app.post('/name', (req, res) => {
+    const firstname = req.body.firstname;
+    const lastname = req.body.lastname;
+    res.send(`Hello ${firstname} ${lastname}`);
 });
 
 app.get('/api/movies', (req, res) => {
