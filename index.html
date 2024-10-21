@@ -1,14 +1,25 @@
 <html>
 <body>
+    <!-- Heading of the page -->
     <h1>Hello World</h1>
+
+    <!-- First form that submits data using the GET method -->
     <form action="/name" method="GET">
+        <!-- Input for first name (sent as a query parameter) -->
         First name: <input type="text" name="firstname"><br>
+        <!-- Input for last name (sent as a query parameter) -->
         Last name: <input type="text" name="lastname"><br>
+        <!-- Submit button for the form -->
         <input type="submit" value="Submit">
     </form>
+
+    <!-- Second form that submits data using the POST method -->
     <form action="/name" method="POST">
+        <!-- Input for first name (sent as form data in the request body) -->
         First name: <input type="text" name="firstname"><br>
+        <!-- Input for last name (sent as form data in the request body) -->
         Last name: <input type="text" name="lastname"><br>
+        <!-- Submit button for the form -->
         <input type="submit" value="Submit">
     </form>
 </body>
