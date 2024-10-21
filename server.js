@@ -7,6 +7,12 @@ app.get('/hello/:name', (req, res) => {
     res.send(`Hello ${name}`);
 });
 
+app.get('/name', (req, res) => {
+    const firstname = req.query.firstname;
+    const lastname = req.query.lastname;
+    res.send(`Hello ${firstname} ${lastname}`);
+});
+
 const path = require('path');
 
 app.get('/index', (req, res) => {
